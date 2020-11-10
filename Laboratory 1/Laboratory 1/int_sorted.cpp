@@ -83,38 +83,14 @@ int_sorted int_sorted::merge(const int_sorted& merge_with) const
         other_++;
     }
 
-    int_sorted obj(nullptr, 0);
-    obj.buffer = dummy;
-    return obj;
+    int_sorted result(nullptr, 0);
+    result.buffer = dummy;
+    return result;
 }
 
 int_buffer int_sorted::get_buffer() const
 {
     return buffer;
 }
-
-void int_sorted::generate_value()
-{
-    using std::mt19937;
-    using std::random_device;
-    using std::uniform_int_distribution;
-
-    random_device device{};
-    mt19937 engine{ device() };
-
-    uniform_int_distribution<int> dist(1, 5);
-
-    for (int i = 0; i < buffer.size_; i++)
-        buffer.data_[i] = dist(engine);
-}
-
-void int_sorted::print_buffer()
-{
-    for (const int* i = buffer.begin(); i != buffer.end(); i++)
-        std::cout << *i << std::endl;
-}
-
-
-
 
 

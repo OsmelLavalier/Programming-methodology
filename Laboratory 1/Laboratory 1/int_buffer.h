@@ -19,7 +19,7 @@ public:
     int_buffer(const int_buffer& rhs); // copy construct
     int_buffer(int_buffer&& rhs) noexcept; // move construct
 
-    friend void swap(int_buffer& this_, int_buffer& other_); // copy and swap idom
+    friend void swap(int_buffer& this_, int_buffer& other_); // copy and swap idiom
     
     int_buffer& operator =(const int_buffer& rhs); // copy assign
     int_buffer& operator =(int_buffer&& rhs) noexcept; // move assign

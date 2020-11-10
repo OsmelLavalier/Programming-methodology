@@ -52,6 +52,9 @@ int main()
 
     is_2 = is_2.merge(is_);
     print_buffer(is_2.get_buffer());
+   
+   std::sort(buffer.begin(), buffer.end());
+   
 
 
     return 0;
