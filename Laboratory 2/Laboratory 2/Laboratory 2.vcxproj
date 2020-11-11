@@ -139,12 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="Cylinder.h" />
     <ClInclude Include="Parallelepiped.h" />
     <ClInclude Include="Rectangle.h" />
     <ClInclude Include="Round_Rectangle.h" />
     <ClInclude Include="Shape.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="Cylinder.cpp" />
     <ClCompile Include="Parallelepiped.cpp" />
     <ClCompile Include="Rectangle.cpp" />
     <ClCompile Include="Round_Rectangle.cpp" />
