@@ -9,6 +9,7 @@
 #define shape_h
 
 #include<iostream>
+#include<vector>
 
 using std::string;
 

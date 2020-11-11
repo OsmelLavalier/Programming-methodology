@@ -5,23 +5,29 @@
 
 using std::cout;
 using std::endl;
+using std::vector;
+
 
 #define PI 3.141592653589793238463
 
+void GetData(vector<Shape*>& shapes, size_t size)
+{
+    for (auto* type : shapes)
+    {
+        cout << "Name: " << type->getName() << ", Colour: " << type->getColour() << ", Area: " << type->getArea() << endl;
+    }
+
+}
+
 int main()
 {
-    Rectangle r("rectangle", "purple", 2, 4);
-    cout << r.getName() << ", " << r.getColour() << ", " << r.getArea() << endl;
+    vector<Shape*> shapes{
+        new Rectangle("Rectangle", "purple", 2, 4),
+        new Round_Rectangle("Rounded Rectangle", "green", 6, 4, 1, PI),
+        new Parallelepiped("Parallelepiped", "grey", 1, 2, 2),
+        new Circle("Circle", "cyan", 2, PI),
+        new Cylinder("Cylinder", "yellow", 2, PI, 5)
+    };
 
-    Round_Rectangle rr("rounded rectangle", "green", 6, 4, 1, PI);
-    cout << rr.getName() << ", " << rr.getColour() << ", " << rr.getArea() << endl;
-
-    Parallelepiped pp("parallelepiped", "grey", 1, 2, 2);
-    cout << pp.getName() << ", " << pp.getColour() << ", " << pp.getArea() << endl;
-
-    Circle c("circle", "cyan", 2, PI);
-    cout << c.getName() << ", " << c.getColour() << ", " << c.getArea() << endl;
-
-    Cylinder cc("cylinder", "yellow", 2, PI, 5);
-    cout << cc.getName() << ", " << cc.getColour() << ", " << cc.getArea() << endl;
+    GetData(shapes, 5);
 }
