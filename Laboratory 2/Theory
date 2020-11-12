@@ -1,0 +1,33 @@
+
+* abstract classes is made by declaring at least one of its functions as pure virtual
+
+* pure virtual function -> int GetArea() "= 0", writting the chars inside the strinng as follows.
+
+* interface class (abstract base classes) cannot be instantiated: -> compiler error
+
+* if one the class using the ABC class does not ovveride one of the pure virtual functions: -> compiler error
+
+* 
+
+
+Rounded Rectangle Area:
+
+   d = √(( a - 2r )² + ( b - 2r )²) + 2r
+   p = 2 * [ a + b - r * ( 4 - π ) ]
+   A = ab - r² * ( 4 - π )
+
+Rectangle Area:
+   A = w * h
+
+Parallelepiped Area:
+   A = 2(a·b + a·h + b·h)
+   
+Circle Area:
+   A = πr² = π(R/2)²
+   
+Cylinder Area:
+   v = πr²h
+   ma (mantel arean) = 2πrh
+   A = 2πrh + 2πr² = 2πr(h + r)
+   
+
