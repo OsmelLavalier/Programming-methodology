@@ -1,7 +1,7 @@
 #ifndef Rectangle_h
 #define Rectangle_h
 
-#include "shape.h"
+#include "Shape.h"
 
 class Rectangle : public Shape
 {
