@@ -10,6 +10,7 @@
 
 #include<iostream>
 #include<vector>
+#include<cmath>
 
 using std::string;
 

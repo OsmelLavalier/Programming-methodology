@@ -1,19 +1,13 @@
 #include "Circle.h"
 
-Circle::Circle(string n_, string c_, double r_, double p_): Shape(n_, c_)
+Circle::Circle(string n_, string c_, double r_): Shape(n_, c_)
 {
     radius__ = r_;
-    pi___ = p_;
 }
 
 void Circle::setRadius(double r_)
 {
     radius__ = r_;
-}
-
-void Circle::setPI(double p_)
-{
-    pi___ = p_;
 }
 
 double Circle::getArea() const
