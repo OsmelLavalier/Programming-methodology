@@ -1,0 +1,23 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "0F66F1BCACF9D0CE76537AB9DD0A0600B11E68AC",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "0F66F1BCACF9D0CE76537AB9DD0A0600B11E68AC" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7A352396-7350-4AFD-8229-143F44F33ABA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "0F66F1BCACF9D0CE76537AB9DD0A0600B11E68AC" : "Programming-methodology\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Laboratory 3",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Laboratory 3\/Laboratory 3.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/OsmelLavalier\/Programming-methodology.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "0F66F1BCACF9D0CE76537AB9DD0A0600B11E68AC"
+    }
+  ]
+}
