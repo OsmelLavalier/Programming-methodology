@@ -8,16 +8,12 @@
 #ifndef node__h
 #define node__h
 
+#include "orders.h"
 
 class node_
 {
 public:
-   std::string name__;
-   int price__; // this will serve as the priority for each node. low price = HIGH PRIORITY, high price = LOW PRIORITY
-   
-   node_* next__;
-   
-   node_() {}
+    node_* next__;
 };
 
 #endif /* node__h */

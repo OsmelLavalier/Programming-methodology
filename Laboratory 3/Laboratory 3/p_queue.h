@@ -8,27 +8,43 @@
 #ifndef p_queue_h
 #define p_queue_h
 
-#include<bits/stdc++.h>
+#include<iostream>
+#include<random>
+#include<chrono>
+#include<string>
+#include<map>
+#include<utility>
 
 #include "node_.h"
 
-template<typename T, typename T2>
+class cmp 
+{
+public:
+    bool operator()(int i, int j) 
+    {
+        return i <= j;
+    }
+};
+
+template<typename T, class T2>
 class p_queue
 {
 private:
-   node_* front__, *rear__;
+    T* front__;
    
 public:
-   p_queue(): front__(nullptr), rear__(nullptr) {}
+   p_queue(): front__(nullptr) {}
    
    void push(std::string name_, int price_)
    {
-      node_* temp_node, * new_node = new node_;
-      
-      new_node->name__ = name_;
-      new_node->price__ = price_;
-      
-      if(front__ == nullptr || price_ < front__->price__)
+       T* temp_node = new T, *new_node = new T;
+
+      temp_node->name__ = name_;
+      temp_node->price__ = price_;
+
+      T2 compare_orders;
+
+      if(front__ == nullptr || compare_orders(price_, front__->price__))
       {
          new_node->next__ = front__;
          front__ = new_node;
@@ -36,7 +52,7 @@ public:
       else
       {
          temp_node = front__;
-         while(temp_node->next__ != nullptr && temp_node->price__ <= price_)
+         while(temp_node->next__ != nullptr && compare_orders(temp_node->price__, price_))
          {
             temp_node = temp_node->next__;
             
@@ -46,9 +62,9 @@ public:
       }
    }
    
-   node_* pop()
+   T* pop()
    {
-      node_* node_to_delete;
+      T* node_to_delete;
       if(empty())
       {
          puts("Queue is empty, nothing to delete.");
@@ -65,8 +81,8 @@ public:
    
    std::size_t size()
    {
-      size_t sz = 1;
-      node_* t_front = front__;
+      size_t sz = 0;
+      T* t_front = front__;
       while(t_front->next__ != nullptr)
       {
          sz++;
@@ -78,30 +94,41 @@ public:
    
    void display_queue()
    {
-      if(empty())
-      {
-         puts("Queue is empty.");
-         exit(0);
-      }
-      
-      else
-      {
-         node_* t_front = front__;
-         
-         while(t_front != nullptr)
-         {
-            std::cout << t_front->name__ << " " << t_front->price__ << "\n";
-            t_front = t_front->next__;
-         }
-      }
+       if (empty())
+       {
+           puts("Queue is empty.");
+           exit(0);
+       }
+
+       else
+       {
+           T* t_front = front__;
+
+           while (t_front != nullptr)
+           {
+               std::cout << t_front->name__ << " " << t_front->price__ << "\n";
+               t_front = t_front->next__;
+           }
+       }
    }
    
-   
-   ~p_queue()
+   T* operator[](int index)
    {
-      free(front__);
+       int counter = 0;
+       T* tmp = front__;
+
+       while (tmp->next__ != nullptr)
+       {
+           if (counter == index)
+           {
+               return tmp;
+           }
+           counter++;
+           tmp = tmp->next__;
+       }
+       return tmp;
    }
-   
+
 };
 
 #endif /* p_queue_h */
