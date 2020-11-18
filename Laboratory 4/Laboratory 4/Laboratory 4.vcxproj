@@ -139,7 +139,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Email.cpp" />
+    <ClCompile Include="MailBox.cpp" />
     <ClCompile Include="Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="CompDateWhoSubject.h" />
+    <ClInclude Include="CompSubjectWhoDate.h" />
+    <ClInclude Include="CompWhoDateSubject.h" />
+    <ClInclude Include="Email.h" />
+    <ClInclude Include="MailBox.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="TODOS.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

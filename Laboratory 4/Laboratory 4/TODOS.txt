@@ -1,0 +1,5 @@
+TODOS
+
+1. Assign our private member emails__ from MailBox the mails passed in main.
+2. Fix sort functions implementation in Mailbox class
+
