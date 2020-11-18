@@ -1,36 +1,13 @@
 #include "p_queue.h"
 
-
-
-void transactions(p_queue<orders, cmp> sales, p_queue<orders, cmp> buys)
-{
-    std::cout << "Transactions output:\n";
-    for (int i = 0; i < sales.size(); i++)
-    {
-        if (sales[i]->price__ < buys[i]->price__ && sales[i]->name__ != buys[i]->name__)
-        {
-            std::cout << "Sale done:\n";
-            std::cout << "Seller's name" << "\t\t" << "Buyer's name:" << "\t\t" << "Price:\n";
-            std::cout << sales[i]->name__ << "\t\t" << buys[i]->name__ << "\t\t" << sales[i]->price__ << std::endl;
-            std::cout << "\n";
-        }
-        else buys.pop();
-    } 
-}
-
 using std::mt19937;
 using std::random_device;
 using std::uniform_int_distribution;
 
-
-int main()
+void add_order_to_queue(p_queue<orders, cmp>& sell_orders, p_queue<orders, cmp>& buy_orders)
 {
     random_device device{};
     mt19937 engine{ device() };
-   
-
-    p_queue<orders, cmp> sell_orders;
-    p_queue<orders, cmp> buy_orders;
 
     std::map<std::string, int> persons;
     std::map<std::string, int>::iterator it;
@@ -39,11 +16,11 @@ int main()
     traders['0'] = "Erik Pendel";
     traders['1'] = "Jarl Wallenberg";
     traders['2'] = "Joakim von Anka";
-    
+
     std::string index = "";
     uniform_int_distribution<int> rand_price(15, 30);
     uniform_int_distribution<int> dist(0, 41);
-    
+
     for (int i = 1; i < 42; i++)
     {
 
@@ -72,21 +49,42 @@ int main()
 
         if (index[0] == '0')
         {
-            buy_orders.push(traders[index[2]], rand_price(engine));
+            orders buyers(traders[index[2]], rand_price(engine));
+            buy_orders.push(buyers);
         }
         else if (index[0] == '1')
         {
-            sell_orders.push(traders[index[2]], rand_price(engine));
+            orders sellers(traders[index[2]], rand_price(engine));
+            sell_orders.push(sellers);
         }
     }
+}
 
-    //sell_orders.display_queue();
+void transactions(p_queue<orders, cmp> sales, p_queue<orders, cmp> buys)
+{
+    std::cout << "Transactions output:\n";
 
-    //transactions(sell_orders, buy_orders);
+    while (!sales.empty())
+    {
+        auto sellers = sales.pop();
+        auto buyers = buys.pop();
 
+        if (sellers->price__ < buyers->price__ && sellers->name__ != buyers->name__)
+        {
+            std::cout << "Seller's name" << "\t\t" << "Buyer's name:" << "\t\t" << "Price:\n";
+            std::cout << sellers->name__ << "\t\t" << buyers->name__ << "\t\t" << sellers->price__ << std::endl;
+            std::cout << "\n";
+        }
+        else buys.pop();
+    }
+}
 
-    cmp comp;
+int main()
+{
+    
+    p_queue<orders, cmp> sell_orders;
+    p_queue<orders, cmp> buy_orders;
 
-    std::cout << comp(5, 3) << std::endl;
-
+    add_order_to_queue(sell_orders, buy_orders);
+    transactions(sell_orders, buy_orders);
 }

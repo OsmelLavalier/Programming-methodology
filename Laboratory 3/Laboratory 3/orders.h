@@ -17,7 +17,8 @@ public:
     int price__;
     orders* next__;
 
-    orders() {} 
+    orders() {}
+    orders(std::string name_, int price_): name__(name_), price__(price_) {} 
     //orders(std::string name, int price): name__(name), price__(price) {}
 };
 

@@ -17,14 +17,15 @@
 
 #include "node_.h"
 
-class cmp 
+class cmp
 {
 public:
-    bool operator()(int i, int j) 
+    bool operator()(int i, int j)
     {
-        return i <= j;
+        return i < j;
     }
 };
+
 
 template<typename T, class T2>
 class p_queue
@@ -35,16 +36,16 @@ private:
 public:
    p_queue(): front__(nullptr) {}
    
-   void push(std::string name_, int price_)
+   void push(T order)
    {
-       T* temp_node = new T, *new_node = new T;
+       T* temp_node = new T, *new_node = new T(order.name__, order.price__);
 
-      temp_node->name__ = name_;
-      temp_node->price__ = price_;
+      temp_node->name__ = order.name__;
+      temp_node->price__ = order.price__;
 
       T2 compare_orders;
 
-      if(front__ == nullptr || compare_orders(price_, front__->price__))
+      if(front__ == nullptr || compare_orders(order.price__, front__->price__))
       {
          new_node->next__ = front__;
          front__ = new_node;
@@ -52,7 +53,7 @@ public:
       else
       {
          temp_node = front__;
-         while(temp_node->next__ != nullptr && compare_orders(temp_node->price__, price_))
+         while(temp_node->next__ != nullptr && compare_orders(temp_node->next__->price__, order.price__))
          {
             temp_node = temp_node->next__;
             
