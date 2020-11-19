@@ -2,7 +2,29 @@
 
 MailBox::MailBox() {}
 
-void MailBox::SortSender(Email& lhs, Email& rhs)
+void MailBox::set_emails(std::vector<Email> m)
 {
-    //std::sort(emails__.begin(), emails__.end(), CompWhoDateSubject()(lhs, rhs));
+	emails__ = m;
+}
+
+std::vector<Email> MailBox::get_emails() 
+{
+	return emails__;
+}
+
+
+void MailBox::SortSender(std::vector<Email>& m)
+{
+    std::sort(m.begin(), m.end(), CompWhoDateSubject());
+}
+
+
+void MailBox::SortDate(std::vector<Email>& m)
+{
+	std::sort(m.begin(), m.end(), CompDateWhoSubject());
+}
+
+void MailBox::SortSubject(std::vector<Email>& m)
+{
+	std::sort(m.begin(), m.end(), CompSubjectWhoDate());
 }

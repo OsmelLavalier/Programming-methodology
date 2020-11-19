@@ -1,25 +1,31 @@
-#include "Email.h"
 #include "MailBox.h"
 
-template<class T, class T2>
+template<typename T, typename T2>
 void Show(const std::vector<T>& v_mail_param)
 {
     T2 mailbox;
 
-    for (int i = 0; i < v_mail_param.size(); i++) //  works..
-        std::cout << v_mail_param[i];
+    mailbox.set_emails(v_mail_param);
+    auto mails = mailbox.get_emails();
+
+    mailbox.SortSender(mails);
+    //mailbox.SortSubject(mails);
+    //mailbox.SortDate(mails);
+
+    for (int i = 0; i < mails.size(); i++) //  works..
+	       std::cout << mails[i];
 }
 
 
 int main()
 {
-    Email a("Anders", "2002-02-28", "lab 1");
-    Email b("Anders", "2002-02-28", "lab 2");
-    
-    
+    Email a("Anders Karlsson ", "2002-02-28", "lab 1");
+    Email c("Johan Wehlin", "2002-10-10", "lab 3");
+    Email d("Lena Sundström", "2002-10-10", "lab 4");
+    Email b("Anders Esping", "2020-11-19", "lab 5");
+    Email e("Kerstin Lindström", "1969-09-22", "lab 2");
 
-    
-    const std::vector<Email> mails{ a, b }; 
+    const std::vector<Email> mails{ a, b, c, d, e}; 
 
     Show<Email, MailBox>(mails);
 

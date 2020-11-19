@@ -6,7 +6,7 @@ Email::Email(std::string sender, std::string date, std::string subject)
 {
 }
 
-std::ostream& operator<<(std::ostream& out, const Email& email)
+std::ostream& operator<<(std::ostream& out, const Email& email) 
 {
     out << email.sender__ << " " << email.date__ << " " << email.subject__ << "\n";
     return out;

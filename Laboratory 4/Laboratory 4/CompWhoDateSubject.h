@@ -6,9 +6,9 @@
 class CompWhoDateSubject 
 {
 public:
-    bool operator()(Email& lhs, Email& rhs)
+    bool operator()(const Email& lhs, const Email& rhs)
     {
-        return lhs.sender__ < rhs.sender__ || lhs.sender__ == rhs.sender__;
+    	return lhs.sender__ < rhs.sender__ || lhs.sender__ == rhs.sender__;
     }
 };
 

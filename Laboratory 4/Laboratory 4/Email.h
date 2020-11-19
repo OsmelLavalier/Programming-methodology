@@ -21,7 +21,6 @@ public:
     Email(std::string sender, std::string date, std::string subject);
 
     friend std::ostream& operator<<(std::ostream& out, const Email& email);
-    
 };
 
 #endif
