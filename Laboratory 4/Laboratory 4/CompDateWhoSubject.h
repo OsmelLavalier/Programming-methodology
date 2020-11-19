@@ -1,14 +1,19 @@
 #ifndef CompDateWhoSubject_h
 #define CompDateWhoSubject_h
 
-#include "Email.h"
-
 class CompDateWhoSubject
 {
 public:
+    
     bool operator()(Email& lhs, Email& rhs)
     {
-        return lhs.date__ < rhs.date__ || lhs.date__ == rhs.date__;
+        if(lhs.date__ == rhs.date__)
+            return lhs.sender__ < rhs.sender__;
+
+        else if(lhs.sender__ == rhs.sender__)
+            return lhs.subject__ < rhs.subject__;
+
+        return lhs.date__ < rhs.date__;
     }
 };
 

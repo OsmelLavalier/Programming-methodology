@@ -8,7 +8,13 @@ class CompSubjectWhoDate
 public:
     bool operator()(Email& lhs, Email& rhs)
     {
-        return lhs.subject__ < rhs.subject__ || lhs.subject__ == rhs.subject__;
+        if(lhs.date__ == rhs.date__)
+            return lhs.sender__ < rhs.sender__;
+
+        else if(lhs.sender__ == rhs.sender__)
+            return lhs.date__ < rhs.date__;
+
+        return lhs.subject__ < rhs.subject__;
     }
 };
 
