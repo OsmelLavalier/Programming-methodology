@@ -10,7 +10,7 @@ private:
     double height__;
 
 public:
-    Cylinder(string n_, string c_, double r_, double p_, double h_);
+    Cylinder(string n_, string c_, double r_, double h_);
 
     double getArea() const override;
 };

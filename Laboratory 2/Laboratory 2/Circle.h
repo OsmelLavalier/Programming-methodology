@@ -1,18 +1,17 @@
 #ifndef Circle_h
 #define Circle_h
 
-#include "shape.h"
+#include "Shape.h"
 
 class Circle : public Shape
 {
 private:
     double radius__;
-    double pi___;
+    const double pi___ = M_PI;
 public:
-    Circle(string n_, string c_, double r_, double p_);
+    Circle(string n_, string c_, double r_);
 
     void setRadius(double r_);
-    void setPI(double p_);
 
     double getArea() const override;
     double getRadius() const;
