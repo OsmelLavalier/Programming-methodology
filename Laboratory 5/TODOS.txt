@@ -1,0 +1,23 @@
+[X] 1. Apply the generic algorithm for_each to print the vector contents.
+
+[X] 2. Find the first object in the vector whose parameter would be greater than a prescribed value. 
+To do this, create your own class for getting predicate function objects, and then apply the generic algorithm find_if. Print the object found.
+
+[X] 3. Try to find objects having the same names and being placed in your sequence successively. 
+Apply the algorithm adjacent_find, and print the first such an object if any.
+
+[?] 4. Try to check the equality of the contents of your original array and the vector, applying the algorithm equal.
+
+[X] 5. Apply the algorithm std::search to establish the location of an arbitrary subsequence in the vector range. 
+Define this subsequence as a part of the array. Print the subsequence found.
+
+[X] 6. Apply the algorithm accumulate in order to calculate the average (mean) value of the parameter data member of the vector's elements. 
+You have to develop your own class MyBinOp that provides the relevant binary operation.
+
+[X] 7. Create a new vector v2 of double values with the same size as the original one, and fill in it with the parameter values from the first vector. 
+You should use the algorithm transform and create a function object of your own class MyUnOp for providing the relevant unary operation (for getting the parameter's values).
+
+[X] 8. Replace all old values xi of the vector v2 with the new ones yi = xi - m, where m is the mean value calculated at the step 6. 
+To do this, you should use the algorithm transform again, having created before your class MyFunc to implement the necessary unary function operator.
+
+[X] 9. Sort the contents of v2 in ascending order. Apply the sort algorithm and print the result.
