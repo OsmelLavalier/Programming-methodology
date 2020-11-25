@@ -11,11 +11,8 @@ class FirstOfObject
     FirstOfObject(std::string name, double age): name__(name), age__(age) {}
     bool operator()(Person& rhs)
     {
-        if(rhs.name__ > name__)
-        {
-            if(rhs.age__ > age__)
+        if(rhs.name__ > name__ && rhs.age__ > age__)
                 return true;
-        }
         return false;
     }
 };

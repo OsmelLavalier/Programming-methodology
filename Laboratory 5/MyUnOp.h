@@ -11,7 +11,11 @@ class MyUnOp
 
     double operator()(Person& person)
     {
-        return person.get_age() - mean__;
+        return person.get_age();
+    }
+    double operator()(double i)
+    {
+        return i - mean__;
     }
 };
 

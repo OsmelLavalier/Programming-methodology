@@ -21,9 +21,15 @@ public:
 
     void generate_value();
     void print_buffer();
+   
+   int_buffer get_simon()
+   {
+      return simon;
+   }
 
 private:
     int_buffer buffer;
+   int_buffer simon;
 };
 
 #endif

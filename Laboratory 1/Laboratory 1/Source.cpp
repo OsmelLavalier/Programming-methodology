@@ -53,9 +53,10 @@ int main()
     is_2 = is_2.merge(is_);
     print_buffer(is_2.get_buffer());
    
-   std::sort(buffer.begin(), buffer.end());
+   //std::sort(buffer.begin(), buffer.end());
    
 
-
+   is_2.set_simon("Simon Nalin");
+   std::cout << is_2.get_simon() << std::endl;
     return 0;
 }

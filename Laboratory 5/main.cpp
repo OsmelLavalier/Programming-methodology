@@ -73,7 +73,7 @@ int main()
 
 	//  6
 	std::cout << "\nThe avarage of vector using std::accumulate is: \n";
-	double sum = std::accumulate(vec_persons.begin(), vec_persons.end(), 0, MyBinOp());
+	double sum = std::accumulate(vec_persons.begin(), vec_persons.end(), 0.0, MyBinOp());
 	double mean = sum / vec_persons.size();
 	std::cout << mean << std::endl;
 
@@ -89,7 +89,7 @@ int main()
 	//  8
 	std::cout << "\nReplace all old values xi of the vector v2 with the new ones yi = xi - m, where m is the mean value calculated at the step 6.\n";
 	
-	std::transform(vec_persons.begin(), vec_persons.end(), v2.begin(), MyUnOp(mean));
+	std::transform(v2.begin(), v2.end(), v2.begin(), MyUnOp(mean));
 	for(int i = 0; i < v2.size(); i++)
 	{
 		std::cout << v2[i] << std::endl;
